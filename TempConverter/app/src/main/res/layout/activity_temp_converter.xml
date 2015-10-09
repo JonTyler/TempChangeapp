@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".TempConverter">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/degreeString"
+        android:id="@+id/degreeLabel"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/farenheightText"
+        android:id="@+id/farenheightLabel"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/degreeLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/celsiusText"
+        android:id="@+id/celsiusLabel"
+        android:layout_marginTop="85dp"
+        android:layout_below="@+id/farenheightLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultText"
+        android:id="@+id/resultLabel"
+        android:layout_alignTop="@+id/celsiusLabel"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/inputEditText"
+        android:layout_alignTop="@+id/farenheightLabel"
+        android:layout_toRightOf="@+id/farenheightLabel"
+        android:layout_toEndOf="@+id/farenheightLabel"
+        android:textSize="18dp" />
+
+</RelativeLayout>
