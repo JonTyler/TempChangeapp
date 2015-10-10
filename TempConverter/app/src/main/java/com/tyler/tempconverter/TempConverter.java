@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView.OnEditorActionListener;
 import android.content.SharedPreferences.Editor;
 
+import java.text.DecimalFormat;
+
 public class TempConverter extends AppCompatActivity implements OnEditorActionListener {
     //declare variables
     private EditText inputEditText;
@@ -57,23 +59,11 @@ public class TempConverter extends AppCompatActivity implements OnEditorActionLi
 
         float conversionRatio = (5f/9f);
         celsius = (fahrenheitValue - 32f)*conversionRatio;
-        resultLabel.setText((int) celsius);
+        //imported format class used here
+        DecimalFormat df = new DecimalFormat("###.##");
+        String celsiusString = df.format(celsius);
+        resultLabel.setText(celsiusString);
     }
 
-    public void onPause(){
-        //save instance values
-        Editor editor = savedValues.edit();
-        editor.putString("fahrenheitValueString", fahrenheitValueString);
-        editor.putFloat("celsius", celsius);
-        editor.commit();
 
-        super.onPause();
-    }
-
-    public void onResume(){
-        super.onResume();
-
-        fahrenheitValueString = savedValues.getString("fahrenheitValueString", "");
-        celsius = savedValues.getFloat("celsius", 0f);
-    }
 }
